@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Eskael</string>
+    <string name="bg_splash">bgSplash</string>
+    <string name="get_started">Get Started</string>
+</resources>
