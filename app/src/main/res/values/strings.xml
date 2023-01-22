@@ -2,4 +2,9 @@
     <string name="app_name">Eskael</string>
     <string name="bg_splash">bgSplash</string>
     <string name="get_started">Get Started</string>
+    <string name="all_recipes">All Recipes</string>
+    <string name="img_main_category">img_main_category</string>
+    <string name="txt_name_dishes">Name Dishes</string>
+    <string name="txt_category_name">Category Name</string>
+    <string name="txt_image_dishes">image dishes</string>
 </resources>
