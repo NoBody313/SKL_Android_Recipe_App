@@ -1,18 +1,18 @@
 package com.fatih.eskael.entities.converter
 
 import androidx.room.TypeConverter
-import com.fatih.eskael.entities.CategoryItems
+import com.fatih.eskael.entities.MealsItems
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 
-class CategoryListConverter {
+class MealListConverter {
     @TypeConverter
-    fun fromCategoryList(category: List<CategoryItems>): String? {
+    fun fromCategoryList(category: List<MealsItems>): String? {
         if (category == null) {
             return (null)
         } else {
             val gson = Gson()
-            val type = object : TypeToken<CategoryItems>() {
+            val type = object : TypeToken<MealsItems>() {
 
             }.type
             return gson.toJson(category, type)
@@ -20,12 +20,12 @@ class CategoryListConverter {
     }
 
     @TypeConverter
-    fun toCategoryList(categoryString: String): List<CategoryItems>? {
+    fun toCategoryList(categoryString: String): List<MealsItems>? {
         if (categoryString == null) {
             return (null)
         } else {
             val gson = Gson()
-            val type = object : TypeToken<CategoryItems>() {
+            val type = object : TypeToken<MealsItems>() {
 
             }.type
             return gson.fromJson(categoryString, type)

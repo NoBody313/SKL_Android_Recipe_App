@@ -7,4 +7,5 @@
     <string name="txt_name_dishes">Name Dishes</string>
     <string name="txt_category_name">Category Name</string>
     <string name="txt_image_dishes">image dishes</string>
+    <string name="txt_category_name_recipe">Category name</string>
 </resources>

@@ -5,7 +5,7 @@
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
-    <com.google.android.material.card.MaterialCardView
+    <androidx.cardview.widget.CardView
         android:id="@+id/cv_dishes"
         android:layout_width="@dimen/_180sdp"
         android:layout_height="@dimen/_260sdp"
@@ -24,7 +24,7 @@
             android:contentDescription="@string/txt_image_dishes"
             android:src="@drawable/bg_splash"
             android:scaleType="centerCrop" />
-    </com.google.android.material.card.MaterialCardView>
+    </androidx.cardview.widget.CardView>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"

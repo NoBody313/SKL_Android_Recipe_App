@@ -1,24 +1,31 @@
 package com.fatih.eskael.adapter
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.fatih.eskael.R
-import com.fatih.eskael.entities.Recipes
+import com.fatih.eskael.entities.MealsItems
 import kotlinx.android.synthetic.main.rv_list_sec_category.view.*
 
-class SecCategoryAdapter : RecyclerView.Adapter<SecCategoryAdapter.RecipeViewHolder>() {
+class SubCategoryAdapter : RecyclerView.Adapter<SubCategoryAdapter.RecipeViewHolder>() {
 
-    private var arrSecCategory = ArrayList<Recipes>()
+    var listener: SubCategoryAdapter.OnItemClickListener? = null
+    var ctx: Context? = null
+    var arrSubCategory = ArrayList<MealsItems>()
 
-    class RecipeViewHolder(view: View) : RecyclerView.ViewHolder(view)
+    class RecipeViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
-    fun setData(arrData: List<Recipes>) {
-        arrSecCategory = arrData as ArrayList<Recipes>
+    }
+
+    fun setData(arrData: List<MealsItems>) {
+        arrSubCategory = arrData as ArrayList<MealsItems>
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecipeViewHolder {
+        ctx = parent.context
         return RecipeViewHolder(
             LayoutInflater.from(parent.context)
                 .inflate(R.layout.rv_list_sec_category, parent, false)
@@ -26,10 +33,25 @@ class SecCategoryAdapter : RecyclerView.Adapter<SecCategoryAdapter.RecipeViewHol
     }
 
     override fun getItemCount(): Int {
-        return arrSecCategory.size
+        return arrSubCategory.size
+    }
+
+    fun setClickListener(listener1: SubCategoryAdapter.OnItemClickListener) {
+        listener = listener1
     }
 
     override fun onBindViewHolder(holder: RecipeViewHolder, position: Int) {
-        holder.itemView.tv_name_dishes.text = arrSecCategory[position].nameDish
+
+        holder.itemView.tv_name_dishes.text = arrSubCategory[position].strMeal
+
+        Glide.with(ctx!!).load(arrSubCategory[position].strMealThumb).into(holder.itemView.img_dish)
+
+        holder.itemView.rootView.setOnClickListener {
+            listener!!.onClicked(arrSubCategory[position].idMeal)
+        }
+    }
+
+    interface OnItemClickListener {
+        fun onClicked(id: String)
     }
 }

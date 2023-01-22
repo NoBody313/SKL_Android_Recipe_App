@@ -8,8 +8,8 @@ import java.io.Serializable
 @Entity(tableName = "Recipes")
 data class Recipes(
     @PrimaryKey(autoGenerate = true)
-    var id: Int,
+    var id:Int,
 
-    @ColumnInfo(name = "nameDish")
-    var nameDish : String
+    @ColumnInfo(name = "dishName")
+    var dishName:String
 ) : Serializable
