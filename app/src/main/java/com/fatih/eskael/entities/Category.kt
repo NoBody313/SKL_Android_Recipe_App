@@ -11,5 +11,5 @@ data class Category(
 
     @ColumnInfo(name = "categoriesItem")
     @TypeConverters(CategoryListConverter::class)
-    val categoriesItem: List<CategoryItem>
+    val categoriesItem: List<CategoryItem>? = null
 )
