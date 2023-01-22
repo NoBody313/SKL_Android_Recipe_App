@@ -1,6 +1,5 @@
 package com.fatih.eskael
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.fatih.eskael.adapter.MainCategoryAdapter
@@ -8,7 +7,7 @@ import com.fatih.eskael.adapter.SecCategoryAdapter
 import com.fatih.eskael.entities.Recipes
 import kotlinx.android.synthetic.main.activity_home.*
 
-class HomeActivity : AppCompatActivity() {
+class HomeActivity : BaseActivity() {
 
     private val arrMainCategory = ArrayList<Recipes>()
     private val arrSecCategory = ArrayList<Recipes>()

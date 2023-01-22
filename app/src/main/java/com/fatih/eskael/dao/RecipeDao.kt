@@ -4,14 +4,14 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.fatih.eskael.entities.Recipes
+import com.fatih.eskael.entities.Category
 
 @Dao
 interface RecipeDao {
 
-    @get:Query("SELECT * FROM recipes ORDER BY id DESC")
-    val allRecipes: List<Recipes>
+    @get:Query("SELECT * FROM category ORDER BY id DESC")
+    val getAllCategory: List<Category>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertRecipe(recipes: Recipes)
+    fun insertCategory(category: Category)
 }
